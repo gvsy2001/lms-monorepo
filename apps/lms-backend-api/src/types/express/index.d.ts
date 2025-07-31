@@ -1,7 +1,11 @@
-import { IUser } from '../../models/User'; // adjust this import if needed
+// apps/lms-backend-api/src/types/express/index.d.ts
 
-declare namespace Express {
-  export interface Request {
-    user?: IUser;
+import type { User } from '../../models/User';
+
+declare global {
+  namespace Express {
+    interface Request {
+      user?: User;
+    }
   }
 }
